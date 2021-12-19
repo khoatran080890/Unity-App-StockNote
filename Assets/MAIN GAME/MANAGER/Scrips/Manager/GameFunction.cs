@@ -78,10 +78,9 @@ public class GameFunction : Singleton<GameFunction>
     #region OTHER
     public void DeleteAllChild(GameObject parent, Action action)
     {
-        Transform transform;
-        for (int i = 0; i < parent.transform.childCount; i++)
-        {
-            transform = parent.transform.GetChild(i);
+        foreach (Transform child in parent.transform) 
+        { 
+            GameObject.Destroy(child.gameObject); 
         }
         action?.Invoke();
     }

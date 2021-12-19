@@ -15,8 +15,8 @@ public class StockItemInfo
     public float VCSH;
     public float VonHoaTT;
     public float PE;
-    public float PB;
-    public List<DuAn> DuAn;
+    //public float PB;
+    public List<DuAn> DuAn = new List<DuAn>();
 }
 [Serializable]
 public class DuAn

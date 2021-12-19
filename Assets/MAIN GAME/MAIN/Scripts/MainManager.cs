@@ -10,12 +10,16 @@ public class MainManager : MonoBehaviour
     public AddNamePannelManager Pannel_AddName;
     public MainPannelManager Pannel_Main;
     public DetailPannelManager Pannel_Detail;
+    public ChangeInfoPannelManager Pannel_ChangeInfo;
+    public AddDuAnManager Pannel_AddDuAn;
 
     void Start()
     {
         Pannel_Main.gameObject.SetActive(true);
         Pannel_AddName.gameObject.SetActive(false);
         Pannel_Detail.gameObject.SetActive(false);
+        Pannel_ChangeInfo.gameObject.SetActive(false);
+        Pannel_AddDuAn.gameObject.SetActive(false);
 
 
 

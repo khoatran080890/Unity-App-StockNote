@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DuAnItem : MonoBehaviour
 {
+    [Header("Main Connect")]
+    public MainManager MainManager;
     [Header("Info")]
     public DuAn duan;
     [Header("UI")]
@@ -42,6 +44,14 @@ public class DuAnItem : MonoBehaviour
         DangBan_Slider.value = (duan.DangBan + duan.DaBan) / duan.ThanhPham;
         GiaVon.text = string.Format("{0:#,###0 'VND/m2}", duan.GiaVon);
         GiaBan.text = string.Format("{0:#,###0 'VND/m2}", duan.GiaBan);
-
+        float ln = (duan.GiaBan - duan.GiaVon) * duan.DangBan * 10000;
+        LoiNhuan.text = string.Format("{0:#,###0 'VND}", ln);
     }
+    public void Delete()
+    {
+        MainManager.Pannel_Detail.info.DuAn.RemoveAll(s => s.TenDuAn == duan.TenDuAn);
+        MainManager.Pannel_Detail.Setup();
+        MainManager.Pannel_Detail.Save();
+    }
+
 }
