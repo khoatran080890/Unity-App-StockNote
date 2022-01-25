@@ -1,0 +1,1 @@
+{"Name":"NLG","VCSH":1.3E+13,"VonHoaTT":2.4814E+13,"PE":10.2,"DuAn":[]}

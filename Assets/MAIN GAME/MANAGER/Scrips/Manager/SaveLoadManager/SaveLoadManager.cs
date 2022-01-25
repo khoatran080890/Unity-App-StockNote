@@ -8,7 +8,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
 {
     public void Save(string foldername, string filename, string data)
     {
-        string directory = Application.streamingAssetsPath + "/" + foldername;
+        string directory = Application.persistentDataPath + "/" + foldername;
         string file = directory + "/" + filename;
         if (!Directory.Exists(directory))
         {
@@ -18,7 +18,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
     }
     public void Load(string foldername, string filename, Action<string> callback)
     {
-        string directory = Application.streamingAssetsPath + "/" + foldername;
+        string directory = Application.persistentDataPath + "/" + foldername;
         string file = directory + "/" + filename;
 
         string data = "";
@@ -31,7 +31,7 @@ public class SaveLoadManager : Singleton<SaveLoadManager>
     }
     public void DeleteFolder(string foldername, Action callback)
     {
-        string directory = Application.streamingAssetsPath + "/" + foldername;
+        string directory = Application.persistentDataPath + "/" + foldername;
         if (Directory.Exists(directory)) //If this folder exists, delete it
         {
             foreach (string d in Directory.GetFileSystemEntries(directory))

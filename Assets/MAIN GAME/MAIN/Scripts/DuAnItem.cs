@@ -30,28 +30,39 @@ public class DuAnItem : MonoBehaviour
     public Text GiaBan;
     [Space(5)]
     public Text LoiNhuan;
+    [Space(5)]
+    public Text GhiChu;
 
     public void SetUp()
     {
         TenDuAn.text = duan.TenDuAn;
         ViTri.text = duan.ViTri;
-        TongDienTich.text = string.Format("{0:#,###0 'ha}", duan.TongDienTich);
-        ThanhPham.text = string.Format("{0:#,###0 'ha}", duan.ThanhPham);
+        TongDienTich.text = string.Format("{0:#,###0 'm2}", duan.TongDienTich);
+        ThanhPham.text = string.Format("{0:#,###0 'm2}", duan.ThanhPham);
         ThanhPham_Slider.value = duan.ThanhPham / duan.TongDienTich;
-        DaBan.text = string.Format("{0:#,###0 'ha}", duan.DaBan);
+        DaBan.text = string.Format("{0:#,###0 'm2}", duan.DaBan);
         DaBan_Slider.value = duan.DaBan / duan.ThanhPham;
-        DangBan.text = string.Format("{0:#,###0 'ha}", duan.DangBan);
+        DangBan.text = string.Format("{0:#,###0 'm2}", duan.DangBan);
         DangBan_Slider.value = (duan.DangBan + duan.DaBan) / duan.ThanhPham;
         GiaVon.text = string.Format("{0:#,###0 'VND/m2}", duan.GiaVon);
         GiaBan.text = string.Format("{0:#,###0 'VND/m2}", duan.GiaBan);
-        float ln = (duan.GiaBan - duan.GiaVon) * duan.DangBan * 10000;
-        LoiNhuan.text = string.Format("{0:#,###0 'VND}", ln);
+        //float ln = (duan.GiaBan - duan.GiaVon) * duan.DangBan;
+        LoiNhuan.text = string.Format("{0:#,###0 'VND}", duan.LoiNhuan);
+        GhiChu.text = duan.GhiChu;
     }
     public void Delete()
     {
-        MainManager.Pannel_Detail.info.DuAn.RemoveAll(s => s.TenDuAn == duan.TenDuAn);
-        MainManager.Pannel_Detail.Setup();
-        MainManager.Pannel_Detail.Save();
+        MainManager.Pannel_ConfirmDelete.ShowConfirm(() =>
+        {
+            MainManager.Pannel_Detail.info.DuAn.RemoveAll(s => s.TenDuAn == duan.TenDuAn);
+            MainManager.Pannel_Detail.Setup();
+            MainManager.Pannel_Detail.Save();
+        });
+    }
+    public void Change()
+    {
+        MainManager.Pannel_AddDuAn.gameObject.SetActive(true);
+        MainManager.Pannel_AddDuAn.Setup(duan);
     }
 
 }

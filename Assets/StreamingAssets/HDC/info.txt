@@ -1,0 +1,1 @@
+{"Name":"HDC","VCSH":1.382E+12,"VonHoaTT":9.062E+12,"PE":26,"DuAn":[{"TenDuAn":"Wonderland \u0110T sinh th\u00E1i","ViTri":"Ph\u01B0\u1EDDng 12 TP V\u0169ng T\u00E0u","TongDienTich":234,"ThanhPham":100,"DaBan":0,"DangBan":0,"GiaBan":0,"GiaVon":0}]}
