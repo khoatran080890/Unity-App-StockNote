@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="firebase_database_url" translatable="false">https://stock-note-89677-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+  <string name="gcm_defaultSenderId" translatable="false">978536829591</string>
+  <string name="google_storage_bucket" translatable="false">stock-note-89677.appspot.com</string>
+  <string name="project_id" translatable="false">stock-note-89677</string>
+  <string name="google_api_key" translatable="false">AIzaSyBGODuZ8gay-a99waO1jj-KNKnX_FdVMMs</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBGODuZ8gay-a99waO1jj-KNKnX_FdVMMs</string>
+  <string name="google_app_id" translatable="false">1:978536829591:android:60ea0f6749056cf036cfd2</string>
+  <string name="default_web_client_id" translatable="false">978536829591-vq35smr5rae0s2p3br607l1s8biuc3lk.apps.googleusercontent.com</string>
+</resources>
